@@ -1,6 +1,6 @@
 import React, {  useRef } from "react";
 import "./_chooseColor.css";
-import useHandleClickOutside from "../../hooks/useHandleClickOutside";
+import useHandleClickOutside from "../../../hooks/useHandleClickOutside";
 const ChooseColor = ({ setSelectedColor, setShowPicker }) => {
   const colors = [
     "papayawhip",

@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdDelete } from "react-icons/md";
 import "./_note.css";
+import { DataContext } from "../../Context/DataProvider";
 
 const Note = ({ title, content, onDelete, id, list }) => {
-
-  const handleChecked=(id)=>{
-    console.log(list[id])
-    list[id].status=!list[id].status
+const {updateNote}=useContext(DataContext)
+  const handleChecked=(index)=>{
+    updateNote(id,index)
+    
   }
   
   return (

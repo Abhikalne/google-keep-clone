@@ -4,19 +4,25 @@ export const DataContext = createContext(null);
 
 const DataProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
-const [listele,setListEle]=useState([])
-  const addNote = (newNote,list) => {
-    let listItem=[...listele,[...list]]
+  const addNote = (newNote,selectedColor,listItem) => {
     
-    setListEle((prev)=>[...prev,[...list]])
-    setNotes((prevNote) => [...prevNote, newNote]);
+    setNotes((prevNote) => [...prevNote,{...newNote,selectedColor,listItem}]);
   };
-console.log(listele)
+
   const deleteNotes = (id) => {
     setNotes((preValue) => [...preValue.filter((note, index) => index !== id)]);
   };
 
-  return <DataContext.Provider value={{ notes, addNote, setNotes,deleteNotes,listele }}>{children}</DataContext.Provider>;
+  const updateNote=(noteId,itemId)=>{  
+    setNotes(notes.map((note,ind)=>ind===noteId ? {
+      ...note,
+      listItem:note.listItem.map((item,id)=>
+        id===itemId ?{...item,status:!item.status}:item
+      ).sort((a,b)=>a.status-b.status)
+    }:note))    
+  }
+  
+  return <DataContext.Provider value={{ notes, addNote, setNotes,deleteNotes,updateNote }}>{children}</DataContext.Provider>;
 };
 
 

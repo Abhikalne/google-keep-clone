@@ -3,7 +3,7 @@ import Note from "../NoteDetail/Note";
 import { DataContext } from "../../Context/DataProvider";
 import './_notes.css'
 const Notes = () => {
-  const { notes, deleteNotes,setNotes,listele } = useContext(DataContext);
+  const { notes, deleteNotes,setNotes } = useContext(DataContext);
   const dragNote = useRef(0);
   const draggedOverNote = useRef(0);
   const handleSort = () => {
@@ -31,7 +31,7 @@ const Notes = () => {
             id={index}
             title={note.title}
             content={note.content}
-            list={listele.length && listele[index]}
+            list={note.listItem}
             onDelete={deleteNotes}
           />
         </div>
