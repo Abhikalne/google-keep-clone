@@ -90,7 +90,7 @@ function CreateNote() {
   };
 
   const togglePicker = (e) => {
-    e.preventDefault();
+    e.stopPropagation();
     setShowPicker(!showPicker);
   };
 
@@ -152,7 +152,7 @@ function CreateNote() {
         <div className="add_btn">
           {isExpanded && (
             <>
-              <button onClick={togglePicker} className="btn_style">
+              <button type="button" onClick={togglePicker} className="btn_style">
                 <MdColorLens size={35} />
               </button>
               <button onClick={addCheckbox} className="btn_style">

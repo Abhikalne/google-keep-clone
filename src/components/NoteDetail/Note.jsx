@@ -22,7 +22,7 @@ const {updateNote}=useContext(DataContext)
               ele.status ? "task_done list_style" : "list_style"
             }`}
           >
-            <input type="checkbox" checked={ele.status} onChange={()=>handleChecked(ind)}/>{ele.value}
+            <input type="checkbox" checked={ele.status} className="checkbox_style" onChange={()=>handleChecked(ind)}/>{ele.value}
           </li>
         ))}
       </p>

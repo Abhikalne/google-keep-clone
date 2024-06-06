@@ -5,3 +5,13 @@
     padding: 1%;
     margin-left: 2%;
   }
+
+  input[type=checkbox] {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width:400px){
+  input[type=checkbox] {
+    transform: scale(2);
+}
+}
