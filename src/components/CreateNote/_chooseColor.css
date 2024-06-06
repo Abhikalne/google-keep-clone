@@ -1,0 +1,32 @@
+.color_option{
+    position: absolute;
+   /* float:right; */
+    z-index: 1111;
+    background-color:rgb(223, 223, 223);
+    box-shadow: 0 1px 7px rgb(128, 128, 128);
+    border-radius: 5%;
+    /* height: 10vh;     */
+    margin-top: 2rem;
+    margin-left: 12rem;
+}
+.color_pallet{
+    width: 5vw;
+    height: 8vh;
+    border: 1px solid gray;
+    border-radius: 60%;
+    display: inline-block;
+    margin: .3rem;
+    cursor: pointer;
+    z-index: 11111;
+}
+
+.color_pallet:hover{
+    border: 1px solid black;
+}
+
+@media screen and (max-width:700px) {
+    .color_option{
+        margin-top: 8%;
+        margin-left:10%
+    }
+}

@@ -1,0 +1,45 @@
+
+.note_container{
+    display: flex;
+    margin: auto;
+    width: 90vw;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+  .note {
+    background: #ffffff;
+    /* display: flex;
+   flex-direction: column; */
+    /* gap:5%; */
+    width: 25vw;
+    border-radius: 7px;
+    /* flex-wrap: wrap; */
+    box-shadow: 0 2px 5px rgb(175, 175, 175);
+    padding: 10px;
+    color: #6f212b;
+  }
+  
+  .note h1 {
+    align-self: end;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  
+  .note p {
+    font-size: 1rem;
+    width: 25vw;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+ 
+  .note button {
+    position: relative;
+    float: right;
+    color: #f88651;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+  }

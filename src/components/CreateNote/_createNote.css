@@ -1,0 +1,69 @@
+
+
+form {
+    position: relative;
+    width: 60vw;
+    margin: 32px auto 50px auto;
+    background: #fff;
+    padding: 7px;
+    border-radius: 7px;
+    box-shadow: 0 1px 7px rgb(128, 128, 128);
+    z-index: 1;
+  }
+  
+  .input_style {
+    width: 80%;
+    border: none;
+    padding: 4px 10px;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    resize: none;
+  }
+  input[type="checkbox"]{
+    width: 5%;
+  }
+  form textarea {
+    width: 98%;
+    border: none;
+    padding: 4px 10px;
+    outline: none;
+    font-size: 1rem;
+    resize: none;
+    background: transparent;
+  }
+  .task_done{
+    text-decoration: line-through;
+  }
+  .add_btn{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 18px;
+    bottom: -18px;
+    cursor: pointer;
+    outline: none;
+    
+  }
+  .btn_style{
+    background: rgb(236, 133, 36);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    /* padding: .2rem; */
+    box-shadow: 0 1px 3px rgb(165, 165, 165);
+    cursor: pointer;
+    outline: none;
+    /* margin-left: 20%; */
+    float: right;
+    margin-right: 10%;
+  }
+  .list_item{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-width: 1px;
+    list-style-type: none;
+    padding: 1%;
+  }
+  
