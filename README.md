@@ -2,19 +2,19 @@ This is a Google Keep clone app. In this you can create n number of notes. Note 
 
 Built in React.js.
 
-View live demo:
-https://abhikalne.github.io/google-keep-clone/
+# View live demo:
+[https://abhikalne.github.io/google-keep-clone/](url)
 
-Setup
+# Setup
 
-Clone the repository
-https://github.com/Abhikalne/google-keep-clone.git
+## Clone the repository
+`https://github.com/Abhikalne/google-keep-clone.git`
 
-Move to desired folder
-cd google-keep-clone
+## Move to desired folder
+`cd google-keep-clone`
 
-Install required dependencies
-npm install
+## Install required dependencies
+`npm install`
 
-To run the app
-npm start
+## To run the app
+`npm start`
