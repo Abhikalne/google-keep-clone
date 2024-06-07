@@ -1,7 +1,7 @@
-import React, {  useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./_chooseColor.css";
-import useHandleClickOutside from "../../../hooks/useHandleClickOutside";
-const ChooseColor = ({ setSelectedColor, setShowPicker }) => {
+
+const ChooseColor = ({ setSelectedColor, setShowPicker, btnRef }) => {
   const colors = [
     "papayawhip",
     "peachpuff",
@@ -12,12 +12,24 @@ const ChooseColor = ({ setSelectedColor, setShowPicker }) => {
     "mistyrose",
   ];
   const pickerRef = useRef();
-
   const handleColorChange = (color) => {
     setSelectedColor(color);
     setShowPicker(false);
   };
-  useHandleClickOutside(pickerRef, () => setShowPicker(false));
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (
+        !pickerRef.current.contains(e.target) &&
+        !btnRef.current?.contains(e.target)
+      ) {
+        setShowPicker(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [pickerRef, setShowPicker, btnRef]);
+
   return (
     <div className="color_option" ref={pickerRef}>
       {colors.map((color) => (

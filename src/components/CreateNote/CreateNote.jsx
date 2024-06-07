@@ -1,16 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import { DataContext } from "../../Context/DataProvider";
-
-import "./_createNote.css";
 import { MdColorLens, MdOutlineLibraryAddCheck } from "react-icons/md";
 import ChooseColor from "./ColorChoice/ChooseColor";
-import useHandleClickOutside from "../../hooks/useHandleClickOutside";
+
+import "./_createNote.css";
 
 function CreateNote() {
   const { addNote } = useContext(DataContext);
   const [isExpanded, setExpanded] = useState(false);
-  const textbox_ref = useRef();
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -19,6 +17,7 @@ function CreateNote() {
   const [enableCheckbox, setEnableCheckbox] = useState(false);
   const [showPicker, setShowPicker] = useState(false);
   const [selectedColor, setSelectedColor] = useState(null);
+  const btnRef = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -94,16 +93,9 @@ function CreateNote() {
     setShowPicker(!showPicker);
   };
 
-  const eventHadler = () => {
-    setExpanded(false);
-    setEnableCheckbox(false);
-  };
-
-  useHandleClickOutside(textbox_ref, eventHadler);
-
   return (
     <div>
-      <form ref={textbox_ref} style={{ backgroundColor: selectedColor }}>
+      <form style={{ backgroundColor: selectedColor }}>
         {isExpanded && (
           <input
             value={note.title}
@@ -152,7 +144,12 @@ function CreateNote() {
         <div className="add_btn">
           {isExpanded && (
             <>
-              <button type="button" onClick={togglePicker} className="btn_style">
+              <button
+                type="button"
+                onClick={togglePicker}
+                ref={btnRef}
+                className="btn_style"
+              >
                 <MdColorLens size={35} />
               </button>
               <button onClick={addCheckbox} className="btn_style">
@@ -168,6 +165,7 @@ function CreateNote() {
           <ChooseColor
             setSelectedColor={setSelectedColor}
             setShowPicker={setShowPicker}
+            btnRef={btnRef}
           />
         )}
       </form>

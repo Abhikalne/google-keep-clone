@@ -4,12 +4,11 @@ import "./_note.css";
 import { DataContext } from "../../Context/DataProvider";
 
 const Note = ({ title, content, onDelete, id, list }) => {
-const {updateNote}=useContext(DataContext)
-  const handleChecked=(index)=>{
-    updateNote(id,index)
-    
-  }
-  
+  const { updateNote } = useContext(DataContext);
+  const handleChecked = (index) => {
+    updateNote(id, index);
+  };
+
   return (
     <div>
       <h1>{title}</h1>
@@ -18,11 +17,15 @@ const {updateNote}=useContext(DataContext)
         {list?.map((ele, ind) => (
           <li
             key={ind}
-            className={`${
-              ele.status ? "task_done list_style" : "list_style"
-            }`}
+            className={`${ele.status ? "task_done list_style" : "list_style"}`}
           >
-            <input type="checkbox" checked={ele.status} className="checkbox_style" onChange={()=>handleChecked(ind)}/>{ele.value}
+            <input
+              type="checkbox"
+              checked={ele.status}
+              className="checkbox_style"
+              onChange={() => handleChecked(ind)}
+            />
+            {ele.value}
           </li>
         ))}
       </p>
